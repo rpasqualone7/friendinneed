@@ -1,31 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Post from "../../components/Post/post";
 import PostEditor from "../../components/PostEditor/postEditor";
-
+import Nav from "../../components/Nav/nav"
 
 class ThreadDisplay extends Component {
 
 	constructor(props) {
 		super(props);
-  
+
 		this.addPost = this.addPost.bind(this);
-	   
+
 		this.state = {
-		  posts : [],
+			posts: [],
 		}
-	  }
-	
-    addPost(newPostBody) {
+	}
+
+	addPost(newPostBody) {
 		const newState = Object.assign({}, this.state)
 		newState.posts.push(newPostBody);
 		this.setState(newState);
-	  }
-  
+	}
+
 
 	render() {
 		return (
 			<div>
+
+				<Nav />
 				{
+
 
 
 					this.state.posts.map((postBody, idx) => {

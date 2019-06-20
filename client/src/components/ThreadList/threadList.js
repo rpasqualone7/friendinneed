@@ -20,4 +20,6 @@ function threadList(props) {
 			</Col>
 		</Row>
 	)
-}
+};
+
+export default threadList;

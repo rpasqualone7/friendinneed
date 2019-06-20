@@ -6,8 +6,10 @@ class ThreadEditor extends Component {
 		super(props);
 
 		this.state = {
-			newThreadBody: '',
+			newPostBody: '',
 			newThreadTitle: '',
+			newThreadDate: Date.now,
+			newThreadUser: ''
 		};
 
 		this.handleThreadEditorInputChange = this.handleThreadEditorInputChange.bind(this);
@@ -17,15 +19,17 @@ class ThreadEditor extends Component {
 
 	handleThreadEditorInputChange(ev) {
 		this.setState({
-		  newThreadBody: ev.target.value
+		  newPostBody: ev.target.value
 		});
 	  }
 
 	  createThread() {
 		  this.props.addThread(this.state.newThreadBody);
 		  this.setState({
-			  newThreadBody: '',
-			  newThreadTitle: '',
+			  newThreadUser: this.props.threadModel.user,
+			  newThreadTitle: this.props.threadModel.title,
+			  newThreadDate: this.props.threadModel.postdate,
+			  newPostBody: this.props.postModel.post
 		  });
 	  }
 
@@ -35,7 +39,7 @@ class ThreadEditor extends Component {
 			<div className='card thread-editor'>
 				<div className='card-content'>
 					<TextInput className="thread-title-input" label="Thread Title" value={this.state.newThreadTitle} />
-					<TextInput className="thread-editor-input" label="Start the conversation!" value={this.state.newThreadBody} onChange={this.handleThreadEditorInputChange} />
+					<TextInput className="thread-editor-input" label="Start the conversation!" value={this.state.newPostBody} onChange={this.handleThreadEditorInputChange} />
 					<Button className="thread-editor-button" type="submit" waves="light" onClick={e=> this.props.addThread(this.state.newThreadBody)}>
 						Post
                 <Icon right>

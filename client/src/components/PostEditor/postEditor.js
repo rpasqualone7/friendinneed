@@ -7,6 +7,9 @@ class PostEditor extends Component {
 
 		this.state = {
 			newPostBody: '',
+			newPostDate: Date.now,
+			newPostUser: '',
+
 		};
 
 		this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
@@ -23,7 +26,9 @@ class PostEditor extends Component {
 	  createPost() {
 		  this.props.addPost(this.state.newPostBody);
 		  this.setState({
-			  newPostBody: '',
+			  newPostBody: this.props.postModel.post,
+			  newPostDate: this.props.postModel.date,
+			  newPostUser: this.props.postModel.user
 		  });
 	  }
 
