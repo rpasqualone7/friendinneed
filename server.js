@@ -14,7 +14,7 @@ app.use(express.json());
 // }
 
 // Define API routes here
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneed");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneedDB");
 
 app.use(routes);
 

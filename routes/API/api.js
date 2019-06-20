@@ -1,18 +1,10 @@
-// const router = require ("express").Router();
-const db = require ("../../models");
+const router = require ("express").Router();
+const controller = require("../../controllers/controller");
 
-exports.post = (req, res) => {
-
-db.Thread.create({ title: req.body.title, author: req.body.author }).save();
-};
-
-exports.show = ((req, res) =>{
-  db.Thread.findOne({title: req.params.title}, (error, thread) => {
-    Post.find({thread: thread._id}, (error, posts) => {
-      res.send([{thread: thread, posts: posts}]);
-    });
-  })
-});
+router.route("/thread")
+  .post(controller.createThread)
+  .post(controller.createPost)
+  .post(controller.displayThread)
   // .then(function(dbThread) {
   //   // If saved successfully, print the new Library document to the console
   //   console.log(dbThread);
@@ -40,4 +32,4 @@ exports.show = ((req, res) =>{
   // });
   
 
-
+module.exports = router;

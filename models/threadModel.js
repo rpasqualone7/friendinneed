@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const ThreadSchema = new Schema({
  title: String,
  postdate: {type: Date, default: Date.now},
- author: {type: String, default: 'Anon'}
+ user: {type: String, default: 'Anon'}
 });
 
 const Thread = mongoose.model("Thread", ThreadSchema);
