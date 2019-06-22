@@ -7,7 +7,7 @@ class Nav extends Component {
 		return (
 			<Navbar alignLinks="left">
 			<NavItem href= '/main'>
-			Main
+			Home
 			</NavItem>
 			<NavItem href="/forum">
 			Forum
