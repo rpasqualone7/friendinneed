@@ -5,37 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+<!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../client/public/css/materialize.min.css"  media="screen,projection"/>
+   <!-- Compiled and minified CSS --> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+<!-- Compiled and minified JavaScript --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>A Friend in Need</title>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="#" class="brand-logo center">A Friend in Need</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="">Forums</a></li>
+        <li><a href="">Articles</a></li>
+        <li><a href="">Find a Friend</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <div class="parallax-container">
+      <div class="parallax"><img src="../public/imgs/background.jpg"></div>
+    </div>
+    <div class=" white">
+      <div class="row container">
+           <div id="root"></div>
+      </div>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+
+      <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
+
+   <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">You always have a friend when you are in need.</h5>
+                <p class="grey-text text-lighten-4">The only thing more exhausting than having a mental illness is pretending like you don't.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Short Cuts</h5>
+                <ul>
+                  <li><a class="white-text text-lighten-3" href="#!">Forums</a></li>
+                  <li><a class="white-text text-lighten-3" href="#!">Articles</a></li>
+                  <li><a class="white-text text-lighten-3" href="#!">Find a Friend</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright
+            </div>
+          </div>
+        </footer>
 </html>

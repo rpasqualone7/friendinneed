@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import ThreadDisplay from "./components/ThreadDisplay/threadDisplay";
-
-
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 
