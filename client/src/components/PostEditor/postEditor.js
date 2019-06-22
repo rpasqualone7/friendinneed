@@ -7,6 +7,9 @@ class PostEditor extends Component {
 
 		this.state = {
 			newPostBody: '',
+			newPostDate: Date.now,
+			newPostUser: '',
+
 		};
 
 		this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
@@ -23,7 +26,9 @@ class PostEditor extends Component {
 	  createPost() {
 		  this.props.addPost(this.state.newPostBody);
 		  this.setState({
-			  newPostBody: '',
+			  newPostBody: this.props.postModel.post,
+			  newPostDate: this.props.postModel.date,
+			  newPostUser: this.props.postModel.user
 		  });
 	  }
 
@@ -32,7 +37,7 @@ class PostEditor extends Component {
 
 			<div className='card post-editor'>
 				<div className='card-content'>
-					<TextInput className="post-editor-input" label="Start the conversation!" value={this.state.newPostBody} onChange={this.handlePostEditorInputChange} />
+					<TextInput className="post-editor-input" label="Add something nice!" value={this.state.newPostBody} onChange={this.handlePostEditorInputChange} />
 					<Button className="post-editor-button" type="submit" waves="light" onClick={e=> this.props.addPost(this.state.newPostBody)}>
 						Post
                 <Icon right>
