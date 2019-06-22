@@ -5,14 +5,14 @@ class Nav extends Component {
 
 	render() {
 		return (
-<Navbar alignLinks="left">
-<NavItem href= '/main'>
-Main
-</NavItem>
-<NavItem href="/forum">
-Forum
-</NavItem>
-</Navbar>
+			<Navbar alignLinks="left">
+			<NavItem href= '/main'>
+			Main
+			</NavItem>
+			<NavItem href="/forum">
+			Forum
+			</NavItem>
+			</Navbar>
 		)}
 }
 

@@ -5,7 +5,7 @@ const ObjectId = Schema.ObjectId;
 
 const postSchema = new Schema ({
 	thread: ObjectId,
-	post: { type: String, required: true},
+	body: { type: String, required: true},
 	date: { type: Date, default: Date.now },
 	user: { type: String, default: 'Anon'}
 });

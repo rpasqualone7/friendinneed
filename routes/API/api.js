@@ -1,10 +1,10 @@
 const router = require ("express").Router();
 const controller = require("../../controllers/controller");
 
-router.route("/thread")
+router.route("/forum")
   .post(controller.createThread)
   .post(controller.createPost)
-  .post(controller.displayThread)
+  .put(controller.displayThread)
   // .then(function(dbThread) {
   //   // If saved successfully, print the new Library document to the console
   //   console.log(dbThread);
