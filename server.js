@@ -14,10 +14,9 @@ app.use(express.json());
 // }
 
 // Define API routes here
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneedDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneed");
 
 app.use(routes);
-
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
