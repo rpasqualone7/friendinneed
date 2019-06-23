@@ -3,8 +3,8 @@ const controller = require("../../controllers/controller");
 
 router.route("/forum")
   .post(controller.createThread)
-  .post(controller.createPost)
-  .put(controller.displayThread)
+  // .post(controller.createPost)
+  .get(controller.displayThread)
   // .then(function(dbThread) {
   //   // If saved successfully, print the new Library document to the console
   //   console.log(dbThread);

@@ -9,14 +9,16 @@ mongoose.connect(
 );
 const threadSeed = [
 	{
-	  title: "First Thread!",
-	  postdate: new Date(Date.now()),
+    thread: ObjectId,
+    title: "First Thread!",
+    body: "Hey there! Welcome to the first thread of the forum!",
+	  date: new Date(Date.now()),
 	  user: ""
 	},
 ];
 
 db.Thread
-//   .remove({})
+  // .remove({})
   .then(() => db.Thread.collection.insertMany(threadSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");

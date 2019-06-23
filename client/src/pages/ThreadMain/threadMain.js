@@ -47,7 +47,7 @@ class ThreadMain extends Component {
 	  
   handleFormSubmit = event => {
     event.preventDefault();
- 
+	console.log("test");
       API.saveThreads({
         title: this.state.title,
         user: this.state.user,
@@ -89,7 +89,7 @@ class ThreadMain extends Component {
 				</Row>
 
 				<ThreadInput 
-				value={this.state.tilte}
+				value={this.state.title}
 				onChange={this.handleInputChange}
 				name="title"
 				placeholder="Thread Title"

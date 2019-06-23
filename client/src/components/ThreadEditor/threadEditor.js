@@ -10,11 +10,11 @@ import { TextInput, Button, Icon } from 'react-materialize';
 		);
 	}
 
-	export function ThreadTextDisplay({children}) {
+	export function ThreadTextDisplay(props) {
 		return(
 				
 			<div className="text-display">
-				<ul className="text-display">{children}</ul>
+				<ul className="text-display">{props.value}</ul>
 		</div>
 	
 		);
