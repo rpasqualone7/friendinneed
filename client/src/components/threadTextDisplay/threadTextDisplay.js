@@ -1,26 +1,29 @@
 import React from 'react';
-import { Row, Col, Collection, CollectionItem } from 'react-materialize';
+import { Row, Col, Collection, CollectionItem, Icon } from 'react-materialize';
 
 
 const ThreadTextDisplay = (props) => {
-	return(
+	return (
+
+
+
+
 		<Row>
-		<Col m={6} s={12}>
-		<Collection>
-			<CollectionItem href="/thread">
-
-			<div className="text-display"key={props.key}>
-			{props.threads}
-			</div>
-			
-				
-			</CollectionItem>
-			</Collection>
+			<Col m={6} s={12}>
+				<Collection header={props.title}>
+					<CollectionItem>
+						<div className="text-display" key={props.key}>
+							{props.body}
+						</div>
+						<a href="/thread" className="secondary-content">
+							<Icon>
+								send
+							</Icon>
+						</a>
+					</CollectionItem>
+				</Collection>
 			</Col>
-			</Row>
-	
-			
-
+		</Row>
 	);
 }
 

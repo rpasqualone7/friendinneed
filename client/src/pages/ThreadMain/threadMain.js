@@ -9,7 +9,7 @@ class ThreadMain extends Component {
 
 	state = {
 		threads: [
-			{ title: 'First Post', body: ' Welcome to the forum!', user: '', date: Date.now }
+			{ title: 'Introduction Thread', body: ' First time visiting? Click here!', user: '', date: Date.now }
 		],
 	};
 	// componentDidMount() {
@@ -56,19 +56,20 @@ class ThreadMain extends Component {
 				{this.state.threads.map((threads, index) => (
 
 					<ThreadTextDisplay
-						threads={threads.title}
+						body={threads.body}
+						title={threads.title}
 						key={index}
 					/>
 
 				)
 				)}
-				{this.state.threads.map((threads, index) => (
+				{/* {this.state.threads.map((threads, index) => (
 
 					<ThreadTextDisplay
 						threads={threads.body}
 						key={index} />
 				)
-				)}
+				)} */}
 
 				<ThreadEditor addThread={this.addThread} />
 			</div>

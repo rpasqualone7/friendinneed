@@ -27,7 +27,7 @@ import { TextInput, Button, Icon } from 'react-materialize';
 	  createThread = event => {
 		event.preventDefault();
 		console.log("test");
-		const newEntry = {user:"", title: this.state.title, date: Date.now};
+		const newEntry = {user:"", body: this.state.body, title: this.state.title, date: Date.now};
 		this.props.addThread(newEntry);
 		this.setState({
 			body: '',
@@ -42,11 +42,11 @@ import { TextInput, Button, Icon } from 'react-materialize';
 		return(
 			<div>
 				<div className='card content'>
-					<TextInput className="thread-title-input"value={this.state.title} onChange={this.handleTitleInputChange}/>
+					<TextInput className="thread-title-input" label="Thread Title" value={this.state.title} onChange={this.handleTitleInputChange}/>
 				</div>
 
 				<div className='card content'>
-					<TextInput className="thread-body-input"value={this.state.body} onChange={this.handleBodyInputChange}/>
+					<TextInput className="thread-body-input" label="Start the conversatrion!" value={this.state.body} onChange={this.handleBodyInputChange}/>
 				</div>
 		
 					<Button className="thread-editor-button" type="submit" waves="light" onClick={this.createThread}>
