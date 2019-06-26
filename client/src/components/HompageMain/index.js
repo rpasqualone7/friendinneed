@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+
 
 
 
@@ -21,19 +21,6 @@ function HomepageMain(props){
     </div>
   </div>
 </div>
-
-<div>       
-     <Map
-          google={this.props.google}
-          zoom={8}
-          style={mapStyles}
-          initialCenter={{ lat: 47.444, lng: -122.176}}
-        />
-        </div>
-
  );
 };
 export default HomepageMain;
-export default GoogleApiWrapper({
-  apiKey: 'TOKEN HERE'
-})(MapContainer);
