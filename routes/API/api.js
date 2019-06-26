@@ -5,6 +5,10 @@ router.route("/forum")
   .post(controller.createThread)
   // .post(controller.createPost)
   .get(controller.displayThread)
+
+  router.route("/thread")
+  .post(controller.createPost)
+  .get(controller.displayPost)
   // .then(function(dbThread) {
   //   // If saved successfully, print the new Library document to the console
   //   console.log(dbThread);

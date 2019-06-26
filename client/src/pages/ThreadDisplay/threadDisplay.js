@@ -1,38 +1,50 @@
 import React, { Component } from 'react';
 import Post from "../../components/Post/post";
 import PostEditor from "../../components/PostEditor/postEditor";
-
+import API from "../../utlis/API";
 class ThreadDisplay extends Component {
 
 	
 		state = {
-			posts: [],
+			posts: [
+				{user: "", id:1, body:"Welcome to the forum!", date: Date.now}
+			],
 		};
 	
+		loadPosts = () => {
+			API.getPosts()
+			  .then(res =>
+				this.setState({ posts: this.props.newState})
+			  )
+			  .catch(err => console.log(err));
+		  };
+		
 
-	addPost(newPostBody) {
-		const newState = Object.assign({}, this.state)
-		newState.posts.push(newPostBody);
-		this.setState(newState);
+	addPost = (newPostBody) => {
+		let newState = [...this.state.posts, newPostBody]
+		API.savePosts({
+			posts: newState
+		})
+		.then(res => this.loadPosts())
+		.catch(err => console.log(err));
+		this.setState({
+			posts: newState,
+			// posts: id = Math.random()
+		});
 	}
 
 
 	render() {
 		return (
 			<div>
-
-				
-				{
-
-
-
-					this.state.posts.map((postBody, idx) => {
-						return (
-							<Post key={idx} postBody={postBody} />
-						)
-
-					})
-				}
+				{this.state.posts.map((post, index) => (
+					<Post 
+					post={post.body} 
+					key={index}/>
+				)
+					
+					)}
+				{/* <Post posts={this.state.posts} /> */}
 				<PostEditor addPost={this.addPost} />
 			</div>
 		)
