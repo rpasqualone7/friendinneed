@@ -14,7 +14,7 @@ class ThreadDisplay extends Component {
 		loadPosts = () => {
 			API.getPosts()
 			  .then(res =>
-				this.setState({ threads: res.data, title: "", user: "", body: "" })
+				this.setState({ posts: this.props.newState})
 			  )
 			  .catch(err => console.log(err));
 		  };
