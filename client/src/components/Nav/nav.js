@@ -12,6 +12,13 @@ class Nav extends Component {
 			<NavItem href="/forum">
 			Forum
 			</NavItem>
+			<NavItem href="/signIn">
+			Sign In
+			</NavItem>
+			<NavItem href="/signUp">
+			Sign Up
+			</NavItem>
+			
 			</Navbar>
 		)}
 }
