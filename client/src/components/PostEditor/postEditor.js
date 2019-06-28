@@ -3,20 +3,12 @@ import { TextInput, Button, Icon } from 'react-materialize';
 
 
 class PostEditor extends Component {
-	// constructor(props) {
-		// super(props);
-
+	
 		state = {
 			 body: '',
 			 date: Date.now,
 			 user: '',
-
-		};
-
-	// 	this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
-	// 	this.createPost = this.createPost.bind(this);
-
-	// }
+			};
 
 	handlePostEditorInputChange = (ev) => {
 		this.setState({
