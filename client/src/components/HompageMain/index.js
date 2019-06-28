@@ -11,7 +11,7 @@ function HomepageMain(props){
       <div class="card">
         <div class="card-content center">
           <span class="card-title red-text text-lighten-2">Never feel like you have to go it alone.</span>
-          <p>You don't have to go through lifes struggles alone. You will always have a friend when you are in need.</p>
+          <p>You don't have to go through the struggles of life and mental illness by yourself. You will always have a friend when you are in need.</p>
         </div>
         <div class="card-action">
           <a href="#">Register</a>
