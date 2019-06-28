@@ -15,6 +15,7 @@ import { TextInput, Button, Icon } from 'react-materialize';
 		this.setState({
 		  title: event.target.value
 		});
+		console.log(this.setState )
 	  };
 
 	  	
@@ -26,9 +27,9 @@ import { TextInput, Button, Icon } from 'react-materialize';
 
 	  createThread = event => {
 		event.preventDefault();
-		console.log("test");
 		const newEntry = {user:"", body: this.state.body, title: this.state.title, date: Date.now};
 		this.props.addThread(newEntry);
+		console.log(newEntry);
 		this.setState({
 			body: '',
 			date: '',

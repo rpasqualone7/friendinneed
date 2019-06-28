@@ -2,20 +2,15 @@ import React from 'react';
 import { Row, Col, Collection, CollectionItem, Icon } from 'react-materialize';
 
 
-const ThreadTextDisplay = (props) => {
-	return (
-
-
-
-
+const ThreadTextDisplay = (props) => (
 		<Row>
 			<Col m={6} s={12}>
 				<Collection header={props.title}>
 					<CollectionItem>
-						<div className="text-display" key={props.key}>
+						<div className="text-display" key={props.id} id={props.id}>
 							{props.body}
 						</div>
-						<a href="/thread" className="secondary-content">
+						<a href={"/thread/" + props.id} className="secondary-content">
 							<Icon>
 								send
 							</Icon>
@@ -24,7 +19,7 @@ const ThreadTextDisplay = (props) => {
 				</Collection>
 			</Col>
 		</Row>
-	);
-}
 
-export default ThreadTextDisplay
+);
+
+export default ThreadTextDisplay;

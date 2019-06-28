@@ -7,14 +7,22 @@ class ThreadDisplay extends Component {
 	
 		state = {
 			posts: [
-				{user: "", id:1, body:"Welcome to the forum!", date: Date.now}
+				{user: "", body:"Welcome to the forum!", date: Date.now}
 			],
 		};
+		componentDidMount() {
+			API.getThread(this.props.match.params.id)
+			  .then(res => this.setState({ posts: [res.data] }))
+			  .catch(err => console.log(err));
+		  }
+		
+		
 	
 		loadPosts = () => {
 			API.getPosts()
 			  .then(res =>
-				this.setState({ posts: this.props.newState})
+				this.setState({ posts: [res.data]}),
+				console.log(this.setState)
 			  )
 			  .catch(err => console.log(err));
 		  };
@@ -25,12 +33,12 @@ class ThreadDisplay extends Component {
 		API.savePosts({
 			posts: newState
 		})
-		.then(res => this.loadPosts())
-		.catch(err => console.log(err));
+		// .then(res => this.loadPosts())
+		// .catch(err => console.log(err));
 		this.setState({
-			posts: newState,
-			// posts: id = Math.random()
+			posts: newState
 		});
+		console.log(newPostBody)
 	}
 
 

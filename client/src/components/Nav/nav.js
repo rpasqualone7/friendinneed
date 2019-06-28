@@ -6,8 +6,9 @@ class Nav extends Component {
 	render() {
 		return (
 			<Navbar alignLinks="left">
+				<a href="#" class="brand-logo center">A Friend in Need</a>
 			<NavItem href= '/main'>
-			Main
+			Home
 			</NavItem>
 			<NavItem href="/forum">
 			Forum
@@ -18,7 +19,6 @@ class Nav extends Component {
 			<NavItem href="/signUp">
 			Sign Up
 			</NavItem>
-			
 			</Navbar>
 		)}
 }
