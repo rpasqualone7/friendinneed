@@ -1,16 +1,13 @@
 const router = require ("express").Router();
 const controller = require("../../controllers/controller");
 
-router.route("/forum")
+router.route("/")
   .post(controller.createThread)
-  // .post(controller.createPost)
-  .get(controller.displayThread)
+  .get(controller.displayThreads)
 
-  router.route("/thread")
+  router.route("/:id")
   .post(controller.createPost)
-  .get(controller.displayPost)
-
-  router.route("/thread/:id")
+  .get(controller.displayPosts)
   .get(controller.findById)
 
 module.exports = router;

@@ -3,11 +3,11 @@ import axios from "axios";
 export default {
 
 	getThreads: function() {
-		return axios.get("/api/forum")
+		return axios.get("/api/forum");
 	},
 
 	getThread: function(id) {
-		return axios.get("/api/forum" + id)
+		return axios.get("/api/thread/" + id);
 	},
 
 	saveThreads: function(threadData) {

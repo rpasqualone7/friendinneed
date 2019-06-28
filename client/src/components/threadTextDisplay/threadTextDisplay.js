@@ -7,10 +7,10 @@ const ThreadTextDisplay = (props) => (
 			<Col m={6} s={12}>
 				<Collection header={props.title}>
 					<CollectionItem>
-						<div className="text-display" key={props.id} id={props.id}>
+						<div className="text-display" key={props._id} id={props.id}>
 							{props.body}
 						</div>
-						<a href={"/thread/" + props.id} className="secondary-content">
+						<a href={"/forum/" + props._id} className="secondary-content">
 							<Icon>
 								send
 							</Icon>

@@ -16,11 +16,12 @@ class ThreadMain extends Component {
 	loadThreads = () => {
 		API.getThreads()
 			.then(res =>
-				 this.setState({ threads: [res.body] }),
-				// console.log("Response.body");
-				// console.log(res.body);
-				// console.log(res);
-				// console.log(this.getThreads);
+				 this.setState({ threads: [{title: res.title, body: res.body, date: Date.now, user:''}] }),
+				//   console.log(this.res.body),
+				//  console.log("Response.body"),
+				//  console.log(res.body),
+				//  console.log(API.getThreads)
+				console.log(this.threads)
 			)
 			.catch(err => console.log(err));
 	};
@@ -45,13 +46,14 @@ class ThreadMain extends Component {
 				{this.state.threads.length ? (
 					<div>
 						{
-							this.state.threads.map((threads, index) => (
-
+							this.state.threads.map((threads) => (
+								
 								<ThreadTextDisplay
-									body={threads.body}
 									title={threads.title}
+									body={threads.body}
 									id={threads.id}
-									key={index} />
+									key={threads.id} />
+									
 
 
 							)

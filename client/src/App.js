@@ -19,12 +19,11 @@ class App extends Component {
       <Nav />
       <Switch>
         {/* <Route exact path="/" component={Books} /> */}
-        <Route exact path="/" component={HomepageMain} />
+        <Route exact path="/main" component={HomepageMain} />
         <Route exact path="/forum" component={ThreadMain} />
-        <Route exact path="/thread" component={ThreadDisplay} />
+        <Route exact path="/forum/:id" component={ThreadDisplay} />
         <Route exact path='/signIn' component={signIn} />
         <Route exact path='/signUp' component={signUp} />
-        <Route exact path="/thread/:id" component={ThreadDisplay} />
       </Switch>
     </div>
   </Router>   
