@@ -6,11 +6,15 @@ class Nav extends Component {
 	render() {
 		return (
 			<Navbar alignLinks="left">
+				<a href="#" class="brand-logo center">A Friend in Need</a>
 			<NavItem href= '/main'>
-			Main
+			Home
 			</NavItem>
 			<NavItem href="/forum">
 			Forum
+			</NavItem>
+			<NavItem href="/signin">
+			Sign in
 			</NavItem>
 			</Navbar>
 		)}
