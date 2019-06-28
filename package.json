@@ -20,12 +20,26 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
     "express": "^4.16.3",
     "google-maps-react": "^2.0.2",
     "if-env": "^1.0.4",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0",
     "mongoose": "^5.5.15",
+    "react-materialize": "^3.3.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpasqualone7/friendinneed.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/rpasqualone7/friendinneed/issues"
+  },
+  "homepage": "https://github.com/rpasqualone7/friendinneed#readme"
+
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.5.15"
   }
