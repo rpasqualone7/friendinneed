@@ -4,48 +4,37 @@ import ThreadTextDisplay from "../../components/threadTextDisplay/threadTextDisp
 import API from "../../utlis/API";
 class ThreadMain extends Component {
 
-	// this.addThread = this.addThread.bind(this);
-	// this.addTitle = this.addTitle.bind(this);
-
 	state = {
 		threads: [
-			{ title: 'Introduction Thread', body: ' First time visiting? Click here!', user: '', date: Date.now }
+			{ title: 'Introduction Thread', body: ' First time visiting? Click here!', date: Date.now, user: '' }
 		],
 	};
-	// componentDidMount() {
-	// 	this.loadThreads();
-	// }
+	componentDidMount() {
+		this.loadThreads();
+	}
 
 	loadThreads = () => {
 		API.getThreads()
 			.then(res =>
-				this.setState({ threads: this.props.newState })
+				 this.setState({ threads: [res.body] }),
+				// console.log("Response.body");
+				// console.log(res.body);
+				// console.log(res);
+				// console.log(this.getThreads);
 			)
 			.catch(err => console.log(err));
 	};
 
-	// addThread(newThreadBody) {
-	// 	const newState = Object.assign({}, this.state)
-	// 	newState.threads.push(newThreadBody);
-	// 	this.setState(newState);
-	// }
-	// addTitle(newThreadTitle) {
-	// 	const newState = Object.assign({}, this.state)
-	// 	newState.title.push(newThreadTitle);
-	// 	this.setState(newState);
-	// }
 
 	addThread = (newThread) => {
 		let newState = [...this.state.threads, newThread]
 		API.saveThreads({
 			threads: newState
 		})
-			.then(res => this.loadThreads())
-			.catch(err => console.log(err));
 		this.setState({
-			threads: newState,
-			// posts: id = Math.random()
+			threads: newState
 		});
+		console.log(newThread)
 	}
 
 
@@ -53,24 +42,26 @@ class ThreadMain extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.threads.map((threads, index) => (
+				{this.state.threads.length ? (
+					<div>
+						{
+							this.state.threads.map((threads, index) => (
 
-					<ThreadTextDisplay
-						body={threads.body}
-						title={threads.title}
-						key={index}
-					/>
+								<ThreadTextDisplay
+									body={threads.body}
+									title={threads.title}
+									id={threads.id}
+									key={index} />
 
-				)
-				)}
-				{/* {this.state.threads.map((threads, index) => (
 
-					<ThreadTextDisplay
-						threads={threads.body}
-						key={index} />
-				)
-				)} */}
+							)
+							)
+						}
+					</div>
+				) : (
+						<h3>No threads to display</h3>
 
+					)}
 				<ThreadEditor addThread={this.addThread} />
 			</div>
 		)
