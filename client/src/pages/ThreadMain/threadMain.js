@@ -1,108 +1,68 @@
 import React, { Component } from 'react';
-import { Row, Col, Collection, CollectionItem } from 'react-materialize';
-import { ThreadInput, ThreadPostBtn, ThreadTextDisplay } from "../../components/ThreadEditor/threadEditor";
+import ThreadEditor from "../../components/ThreadEditor/threadEditor";
+import ThreadTextDisplay from "../../components/threadTextDisplay/threadTextDisplay"
 import API from "../../utlis/API";
-
 class ThreadMain extends Component {
 
-		// this.addThread = this.addThread.bind(this);
-		// this.addTitle = this.addTitle.bind(this);
-
-		state = {
-			threads: [],
-			title: '',
-			body: '',
-			user:''
-		};
+	state = {
+		threads: [
+			{ title: 'Introduction Thread', body: ' First time visiting? Click here!', date: Date.now, user: '' }
+		],
+	};
 	componentDidMount() {
 		this.loadThreads();
 	}
 
 	loadThreads = () => {
 		API.getThreads()
-		  .then(res =>
-			this.setState({ threads: res.data, title: "", user: "", body: "" })
-		  )
-		  .catch(err => console.log(err));
-	  };
-	
-	// addThread(newThreadBody) {
-	// 	const newState = Object.assign({}, this.state)
-	// 	newState.threads.push(newThreadBody);
-	// 	this.setState(newState);
-	// }
-	// addTitle(newThreadTitle) {
-	// 	const newState = Object.assign({}, this.state)
-	// 	newState.title.push(newThreadTitle);
-	// 	this.setState(newState);
-	// }
-	
-	handleInputChange = event => {
-		const { name, value } = event.target;
+			.then(res =>
+				 this.setState({ threads: [res.body] }),
+				// console.log("Response.body");
+				// console.log(res.body);
+				// console.log(res);
+				// console.log(this.getThreads);
+			)
+			.catch(err => console.log(err));
+	};
+
+
+	addThread = (newThread) => {
+		let newState = [...this.state.threads, newThread]
+		API.saveThreads({
+			threads: newState
+		})
 		this.setState({
-		  [name]: value
+			threads: newState
 		});
-	  };
+		console.log(newThread)
+	}
 
-	  
-  handleFormSubmit = event => {
-    event.preventDefault();
- 
-      API.saveThreads({
-        title: this.state.title,
-        user: this.state.user,
-        body: this.state.body
-      })
-        .then(res => this.loadThreads())
-        .catch(err => console.log(err));
-    }
-  
-
-	
 
 
 	render() {
 		return (
 			<div>
+				{this.state.threads.length ? (
+					<div>
+						{
+							this.state.threads.map((threads, index) => (
+
+								<ThreadTextDisplay
+									body={threads.body}
+									title={threads.title}
+									id={threads.id}
+									key={index} />
 
 
-				<Row>
-					<Col m={6} s={12}>
-						<Collection>
-							<CollectionItem href="/thread">
-								
-							<ThreadTextDisplay
-								name="title"
-								value={this.state.title}
-								onChange={this.handleInputChange}
-							/>
-							</CollectionItem>
-							<CollectionItem href="/thread">
-							<ThreadTextDisplay
-								name="body"
-								value={this.state.body}
-								onChange={this.handleInputChange}
-							/>
-							</CollectionItem>
-						</Collection>
-					</Col>
-				</Row>
+							)
+							)
+						}
+					</div>
+				) : (
+						<h3>No threads to display</h3>
 
-				<ThreadInput 
-				value={this.state.tilte}
-				onChange={this.handleInputChange}
-				name="title"
-				placeholder="Thread Title"
-				/>
-				<ThreadInput 
-					value={this.state.body}
-					onChange={this.handleInputChange}
-					name="body"
-					placeholder="Start the conversation!"
-					/>
-				<ThreadPostBtn 
-				onClick={this.handleFormSubmit}/>
-
+					)}
+				<ThreadEditor addThread={this.addThread} />
 			</div>
 		)
 	}

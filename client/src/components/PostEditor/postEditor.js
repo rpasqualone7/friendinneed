@@ -1,35 +1,31 @@
 import React, { Component } from 'react';
 import { TextInput, Button, Icon } from 'react-materialize';
 
+
 class PostEditor extends Component {
-	constructor(props) {
-		super(props);
+	
+		state = {
+			 body: '',
+			 date: Date.now,
+			 user: '',
+			};
 
-		this.state = {
-			newPostBody: '',
-			newPostDate: Date.now,
-			newPostUser: '',
-
-		};
-
-		this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
-		this.createPost = this.createPost.bind(this);
-
-	}
-
-	handlePostEditorInputChange(ev) {
+	handlePostEditorInputChange = (ev) => {
 		this.setState({
-		  newPostBody: ev.target.value
+		   body: ev.target.value
 		});
 	  }
 
-	  createPost() {
-		  this.props.addPost(this.state.newPostBody);
+	  createPost = (ev) => {
+		  ev.preventDefault();
+		  const newEntry = {user: "", body: this.state.body, date: Date.now};
+		  this.props.addPost(newEntry);
 		  this.setState({
-			  newPostBody: this.props.postModel.post,
-			  newPostDate: this.props.postModel.date,
-			  newPostUser: this.props.postModel.user
-		  });
+			   body: '',
+			   date: '',
+			   user: ''
+		  })
+		  console.log(this.state)
 	  }
 
 	render() {
@@ -37,8 +33,8 @@ class PostEditor extends Component {
 
 			<div className='card post-editor'>
 				<div className='card-content'>
-					<TextInput className="post-editor-input" label="Add something nice!" value={this.state.newPostBody} onChange={this.handlePostEditorInputChange} />
-					<Button className="post-editor-button" type="submit" waves="light" onClick={e=> this.props.addPost(this.state.newPostBody)}>
+					<TextInput className="post-editor-input" label="Add something nice!" value={this.state.body} onChange={this.handlePostEditorInputChange} />
+					<Button className="post-editor-button" type="submit" waves="light" onClick={this.createPost}>
 						Post
                 <Icon right>
 							send

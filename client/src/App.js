@@ -18,8 +18,8 @@ class App extends Component {
         {/* <Route exact path="/" component={Books} /> */}
         <Route exact path="/" component={HomepageMain} />
         <Route exact path="/forum" component={ThreadMain} />
-        <Route exact path="/thread" component={ThreadDisplay} />
-            </Switch>
+        <Route exact path="/thread/:id" component={ThreadDisplay} />
+      </Switch>
     </div>
   </Router>   
 

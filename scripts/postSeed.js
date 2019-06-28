@@ -10,7 +10,7 @@ mongoose.connect(
 const postSeed = [
 	{
 	  thread: ObjectId,
-	  post: "Hey there! Welcome to the first thread of the forum!",
+	  body: "Hey there! Welcome to the first thread of the forum!",
 	  date: new Date(Date.now()),
 	  user: ""
 	},
