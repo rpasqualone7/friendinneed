@@ -21,7 +21,7 @@ class signUp extends Component {
         return (
             <div className= "container">
                 <form onSubmit={this.handleSubmit} className="white">
-                   <h5 className="grey-text text-darken-3">Sign Up</h5>
+                   <h5 className="grey-text text-darken-3">Register</h5>
                    <div className="input-field">
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" onChange={this.handleChange}/>
@@ -39,7 +39,7 @@ class signUp extends Component {
                        <input type="text" id="lastName" onChange={this.handleChange} />
                    </div>
                    <div className="input-field">
-                       <button className="btn blue lighten-1 z-depth-0">Sign Up</button>
+                       <button className="btn blue lighten-1 z-depth-0">Register</button>
                    </div>
                 </form>
             </div>
