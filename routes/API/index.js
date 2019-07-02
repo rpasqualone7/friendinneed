@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const postRoutes = require("./api");
+const forumRoutes = require("./forum");
 
 // post routes
-router.use("/post", postRoutes );
+router.use("/forum", forumRoutes );
 
 module.exports = router;

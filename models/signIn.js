@@ -10,6 +10,6 @@ const signInSchema = new Schema({
  password: {type: String, required: true},
 });
 
-const Thread = mongoose.model("signIn", signInSchema);
+const signIn = mongoose.model("signIn", signInSchema);
 
 module.exports = signIn;

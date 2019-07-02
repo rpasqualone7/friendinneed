@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import API from "../../utlis/API";
 
 
 class signUp extends Component {
@@ -15,13 +16,20 @@ class signUp extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        API.saveUser({
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
+        })
+            
         console.log(this.state)
     }
     render() {
         return (
             <div className= "container">
                 <form onSubmit={this.handleSubmit} className="white">
-                   <h5 className="grey-text text-darken-3">Sign Up</h5>
+                   <h5 className="grey-text text-darken-3">Register</h5>
                    <div className="input-field">
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" onChange={this.handleChange}/>
@@ -39,7 +47,8 @@ class signUp extends Component {
                        <input type="text" id="lastName" onChange={this.handleChange} />
                    </div>
                    <div className="input-field">
-                       <button className="btn blue lighten-1 z-depth-0">Sign Up</button>
+                       <button className="btn blue lighten-1 z-depth-0" 
+                       href={"/forum"} >Register</button>
                    </div>
                 </form>
             </div>

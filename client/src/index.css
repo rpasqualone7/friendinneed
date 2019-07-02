@@ -1,6 +1,41 @@
 body {
+  /* background: url("images/hug.jpg"); */
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-size: cover;
+  height: 100%;
+  background-color:transparent;
+  /* color: white; */
 }
-
+.card {
+  padding-bottom: 2%;
+  margin-top: 10%;
+  background: transparent;
+  color: lightseagreen;
+  font-size: 16px;
+  text-align: center;
+  height: 100%;
+  border-radius: 0.25rem;
+  margin-bottom: 2%;
+  display: contents;
+  position: relative;
+  
+}
+.card-action {
+  position: relative;
+  background: black;
+}
+.thread-title-input {
+  color: black;
+}
+.card content {
+  background: transparent;
+  color: black;
+}
+#signUp {
+  color: black;
+}
+.card post-editor {
+  background: transparent;
+}

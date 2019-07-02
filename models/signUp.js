@@ -12,6 +12,6 @@ const signUpSchema = new Schema({
  lastName: {type: String, required: true}
 });
 
-const Thread = mongoose.model("signUp", signUpSchema);
+const signUp = mongoose.model("signUp", signUpSchema);
 
 module.exports = signUp;

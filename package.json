@@ -39,8 +39,4 @@
     "url": "https://github.com/rpasqualone7/friendinneed/issues"
   },
   "homepage": "https://github.com/rpasqualone7/friendinneed#readme"
-
-    "materialize-css": "^1.0.0-rc.2",
-    "mongoose": "^5.5.15"
-  }
 }

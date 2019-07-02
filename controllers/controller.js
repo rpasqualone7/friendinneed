@@ -23,18 +23,20 @@ module.exports = {
 			.catch(err => res.status(422).json(err));
 	},
 
-	displayThread: function (req, res) {
+	displayThreads: function (req, res) {
 		db.Thread
-		.findOneAndUpdate({ _id: req.params.id }, req.body)
+		.find(req.query)
+		.sort({ date: -1 })
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 	
 	},
 
 	
-	displayPost: function (req, res) {
+	displayPosts: function (req, res) {
 		db.Post
-		.findOneAndUpdate({ _id: req.params.id }, req.body)
+		.find(req.query)
+		.sort({ date: -1 })
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 	
