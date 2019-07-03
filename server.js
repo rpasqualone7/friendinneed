@@ -13,8 +13,15 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/friendinneed";
+
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
+
+
 // Define API routes here
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneed");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/friendinneed");
 
 app.use(routes);
 // Send every other request to the React app
