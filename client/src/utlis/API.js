@@ -7,11 +7,7 @@ export default {
 	},
 
 	getThread: function(id) {
-<<<<<<< HEAD
-		return axios.get("/api/forum/" + id);
-=======
 		return axios.get("/api/thread/" + id);
->>>>>>> 9495f7b4212a0af35bff5b3359d06331051e05a1
 	},
 
 	saveThreads: function(threadData) {

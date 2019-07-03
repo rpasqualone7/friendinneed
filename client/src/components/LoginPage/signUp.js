@@ -47,12 +47,7 @@ class signUp extends Component {
                        <input type="text" id="lastName" onChange={this.handleChange} />
                    </div>
                    <div className="input-field">
-<<<<<<< HEAD
-                       <button className="btn blue lighten-1 z-depth-0" 
-                       href={"/forum"} >Register</button>
-=======
                        <button className="btn blue lighten-1 z-depth-0">Register</button>
->>>>>>> 9495f7b4212a0af35bff5b3359d06331051e05a1
                    </div>
                 </form>
             </div>
