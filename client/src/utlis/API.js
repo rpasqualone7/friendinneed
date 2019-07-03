@@ -7,7 +7,7 @@ export default {
 	},
 
 	getThread: function(id) {
-		return axios.get("/api/thread/" + id);
+		return axios.get("/api/forum/" + id);
 	},
 
 	saveThreads: function(threadData) {
@@ -24,6 +24,6 @@ export default {
 	},
 
 		saveUser: function(userData) {
-			return axios.post("/api/thread", userData);
+			return axios.post("/api/user", userData);
 	},
 };

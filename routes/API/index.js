@@ -1,9 +1,6 @@
 const router = require("express").Router();
 const path = require("path");
-const userRoutes = require("./user");
 const forumRoutes = require("./forum");
-
-router.use("/user", userRoutes );
 
 router.use("/forum", forumRoutes );
 
