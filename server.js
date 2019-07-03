@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/friendinneed";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://rpasqualone:snowdog7@ds251287.mlab.com:51287/heroku_18f6n02x";
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
